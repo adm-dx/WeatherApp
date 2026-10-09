@@ -2,35 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Weather App - JavaScript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Real-time weather by geolocation or city search">
+    <title>Weather App</title>
+    <link rel="icon" href="icons/02d.png">
     <link rel="stylesheet" href="font/Rimouski.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-    <div class="app-title">
-        <p>Weather</p>
-    </div>
-    <div class="notification"></div>
-    <div class="weather-container">
-        <div class="weather-icon">
-            <img src="icons/unknown.png" alt="some weather icon">
-        </div>
-        <div class="temperature-value">
-            <p>- °<span>C</span></p>
-        </div>
-        <div class="temperature-description">
-            <p> - </p>
-        </div>
-        <div class="location">
-            <p>-</p>
-        </div>
-    </div>
-</div>
+<main class="container">
+    <h1 class="app-title">Weather</h1>
 
-<script src="app.js"></script>
+    <form class="search" role="search">
+        <input type="search" name="city" placeholder="Search city…" aria-label="City name" autocomplete="off">
+        <button type="submit">Go</button>
+    </form>
+
+    <div class="notification" role="alert" hidden></div>
+
+    <section class="weather-container" aria-live="polite">
+        <div class="weather-icon">
+            <img src="icons/unknown.png" alt="Unknown weather" width="128" height="128">
+        </div>
+        <button type="button" class="temperature-value" title="Switch °C / °F">- °<span>C</span></button>
+        <p class="temperature-description">-</p>
+        <p class="location">-</p>
+    </section>
+</main>
+
+<script type="module" src="js/main.js"></script>
 </body>
 </html>
-
-
